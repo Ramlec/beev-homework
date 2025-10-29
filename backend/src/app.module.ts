@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { VersionEntity } from './version.entity';
+import { VersionEntity } from './entities/version.entity';
 import { Keyv, createKeyv } from '@keyv/redis';
 import { CacheableMemory } from 'cacheable';
 import { CacheModule } from '@nestjs/cache-manager';
