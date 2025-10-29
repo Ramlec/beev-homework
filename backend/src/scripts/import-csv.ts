@@ -3,7 +3,7 @@ import * as path from "path";
 import * as csv from "csv-parser";
 
 import { AppDataSource } from "./data-source";
-import { Vehicle } from "../entities/vehicle.entity";
+import { VehicleEntity } from "../entities/vehicle.entity";
 
 interface ImportCSVProps {
     ID: string;
@@ -83,7 +83,7 @@ async function run() {
             emission_gco2_km: vehicle.Emission_gco2_km,
         };
     });
-    const vehicleRepository = AppDataSource.getRepository(Vehicle);
+    const vehicleRepository = AppDataSource.getRepository(VehicleEntity);
     await vehicleRepository.save(vehicleEntities);
 
     console.log(`Imported ${vehicleEntities.length} vehicles`);

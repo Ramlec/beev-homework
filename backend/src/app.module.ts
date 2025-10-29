@@ -8,6 +8,9 @@ import { Keyv, createKeyv } from '@keyv/redis';
 import { CacheableMemory } from 'cacheable';
 import { CacheModule } from '@nestjs/cache-manager';
 import { ConfigModule } from '@nestjs/config';
+import { VehicleController } from './controller/vehicle.controller';
+import { VehicleService } from './services/vehicle.service';
+import { VehicleEntity } from './entities/vehicle.entity';
 
 @Module({
   imports: [
@@ -16,7 +19,7 @@ import { ConfigModule } from '@nestjs/config';
       envFilePath: '.env',
     }),
     DatabaseModule,
-    TypeOrmModule.forFeature([VersionEntity]),
+    TypeOrmModule.forFeature([VersionEntity, VehicleEntity]),
     CacheModule.registerAsync({
       useFactory: async () => {
         return {
@@ -31,7 +34,7 @@ import { ConfigModule } from '@nestjs/config';
       },
     }),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, VehicleController],
+  providers: [AppService, VehicleService],
 })
 export class AppModule {}
