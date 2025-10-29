@@ -1,7 +1,24 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { IsEnum, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { IsEnum, IsNotEmpty, IsNumber, IsOptional, IsPositive, IsString, IsUUID } from 'class-validator';
 import { VehicleStatus, VehicleType } from 'src/model/vehicle.type';
 
+export class GetVehicleDto {
+    @IsUUID()
+    @IsNotEmpty()
+    id: string;
+}
+
+export class GetVehiclesDto {
+    @IsNumber()
+    @IsPositive()
+    @IsOptional()
+    page: number;
+    
+    @IsNumber()
+    @IsPositive()
+    @IsOptional()
+    limit: number;
+}
 
 export class CreateVehicleDto {
     @IsString()
