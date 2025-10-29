@@ -27,3 +27,10 @@ $ pnpm run test:e2e
 # test coverage
 $ pnpm run test:cov
 ```
+
+## Run import CSV
+
+```bash
+# import cars csv
+$ pnpm run import:csv
+```
