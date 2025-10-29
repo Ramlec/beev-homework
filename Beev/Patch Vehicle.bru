@@ -1,0 +1,17 @@
+meta {
+  name: Patch Vehicle
+  type: http
+  seq: 3
+}
+
+patch {
+  url: http://localhost:3030/vehicles/c06f3409-f587-4fb9-b71e-677ff4634fc8
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "type": "BEV"
+  }
+}

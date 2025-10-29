@@ -1,0 +1,20 @@
+meta {
+  name: Vehicle
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3030/vehicles
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "brand": "Tesla",
+    "model": "CyberTruck",
+    "batteryCapacity": "300",
+    "type": "BEV"
+  }
+}
