@@ -16,7 +16,7 @@ export function Header() {
           to="/vehicle-management" 
           className="text-foreground hover:text-primary transition-colors font-medium"
         >
-          Vehicle Management
+         Gestion du parc
         </NavLink>
         <NavLink 
           to="/version" 
