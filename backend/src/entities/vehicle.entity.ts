@@ -1,3 +1,4 @@
+import { VehicleStatus, VehicleType } from "src/model/vehicle.type";
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -17,7 +18,7 @@ export class VehicleEntity extends BaseEntity {
     @Column("float")
     currentChargeLevel: number;
 
-    @Column("enum", { enum: ["available", "charging", "in_use"] })
+    @Column("enum", { enum: VehicleStatus })
     status: string;
 
     @Column("date")
@@ -26,7 +27,7 @@ export class VehicleEntity extends BaseEntity {
     @Column("float")
     averageEnergyConsumption: number;
 
-    @Column("enum", { enum: ["BEV", "ICE"] })
+    @Column("enum", { enum: VehicleType })
     type: string;
 
     @Column("float")

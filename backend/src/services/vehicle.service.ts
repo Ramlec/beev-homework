@@ -43,4 +43,9 @@ export class VehicleService {
     async getTotalVehicles() {
         return this.vehicleRepository.count();
     }
+
+
+    async createVehicle(vehicle: VehicleEntity) {
+        return this.vehicleRepository.save(vehicle);
+    }
 }

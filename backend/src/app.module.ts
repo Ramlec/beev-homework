@@ -25,13 +25,13 @@ import { AnalyticsController } from './controller/analytics.controller';
     CacheModule.registerAsync({
       useFactory: async () => {
         return {
-          stores: [
-            new Keyv({
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-              store: new CacheableMemory({ lruSize: 5000 }),
-            }),
-            createKeyv('redis://localhost:6379'),
-          ],
+          // stores: [
+          //   new Keyv({
+          //     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+          //     store: new CacheableMemory({ lruSize: 5000 }),
+          //   }),
+          //   createKeyv('redis://localhost:6379'),
+          // ],
         };
       },
     }),
