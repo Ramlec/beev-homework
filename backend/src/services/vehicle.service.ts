@@ -35,4 +35,12 @@ export class VehicleService {
             take: limit,
         });
     }
+
+    /**
+     * Get the total number of vehicles
+     * @returns The total number of vehicles
+     */
+    async getTotalVehicles() {
+        return this.vehicleRepository.count();
+    }
 }

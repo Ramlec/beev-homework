@@ -11,6 +11,8 @@ import { ConfigModule } from '@nestjs/config';
 import { VehicleController } from './controller/vehicle.controller';
 import { VehicleService } from './services/vehicle.service';
 import { VehicleEntity } from './entities/vehicle.entity';
+import { AnalyticsService } from './services/analytics.service';
+import { AnalyticsController } from './controller/analytics.controller';
 
 @Module({
   imports: [
@@ -34,7 +36,7 @@ import { VehicleEntity } from './entities/vehicle.entity';
       },
     }),
   ],
-  controllers: [AppController, VehicleController],
-  providers: [AppService, VehicleService],
+  controllers: [AppController, VehicleController, AnalyticsController],
+  providers: [AppService, VehicleService, AnalyticsService],
 })
 export class AppModule {}
