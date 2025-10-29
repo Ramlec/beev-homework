@@ -89,7 +89,7 @@ export function VehicleManagement(){
                             {vehicle.currentChargeLevel.toFixed(1)}%
                         </span>
                         <span className="text-xs text-muted-foreground">
-                            {vehicle.batteryCapacity} kWh
+                            {(vehicle.currentChargeLevel * vehicle.batteryCapacity / 100).toFixed(0)}/{vehicle.batteryCapacity} kWh
                         </span>
                     </div>
                 );
@@ -100,7 +100,13 @@ export function VehicleManagement(){
             accessorKey: 'averageEnergyConsumption',
             cell: ({ row }) => {
                 const value = row.getValue('averageEnergyConsumption') as number;
-                return `${value.toFixed(2)} kWh/100km`;
+
+                const type = row.getValue('type') as string;
+                if (type === 'BEV') {
+                    return `${value.toFixed(2)} kWh/100km`;
+                } else {
+                    return `${value.toFixed(2)} L/100km`;
+                }
             },
         },
         {
