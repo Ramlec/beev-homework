@@ -13,6 +13,12 @@ export function Header() {
           Home
         </NavLink>
         <NavLink 
+          to="/vehicle-management" 
+          className="text-foreground hover:text-primary transition-colors font-medium"
+        >
+          Vehicle Management
+        </NavLink>
+        <NavLink 
           to="/version" 
           className="text-foreground hover:text-primary transition-colors font-medium"
         >
